@@ -21,7 +21,7 @@ typedef struct {
 
 void storage_init();
 void record_rain_event();
-void get_last_hour_rain(uint32_t current_time_minutes, uint8_t* total_rain);
+void get_last_hour_rain(uint32_t current_time_minutes, uint16_t* total_rain);
 int get_rain_pulse_count(int* value);
 
 

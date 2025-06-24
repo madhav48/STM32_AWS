@@ -115,12 +115,12 @@ extern "C" int get_rain_pulse_count(int *value)
 }
 
 // Get last hour rain..
-extern "C" void get_last_hour_rain(uint32_t current_time_minutes, uint8_t *total_rain)
+extern "C" void get_last_hour_rain(uint32_t current_time_minutes, uint16_t *total_rain)
 {
     if (!total_rain)
         return;
 
-    uint8_t sum = 0;
+    uint16_t sum = 0;
     for (int i = 0; i < RAIN_WINDOW_SIZE_MIN; ++i)
     {
         if (rain_window[i].minute != INVALID_MINUTE &&

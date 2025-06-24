@@ -78,7 +78,7 @@ void Comms_Handle()
 
     else if (strcmp(uartBuffer, "GET_RAIN_HOURLY") == 0)
     {
-        uint8_t hourly_rain = 0;
+        uint16_t hourly_rain = 0;
         get_last_hour_rain(get_current_minutes(), &hourly_rain);
         snprintf(response, sizeof(response), "RAIN_HOURLY: %u\n", hourly_rain);
     }

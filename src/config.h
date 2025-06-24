@@ -17,7 +17,17 @@
 // Timer used for microsecond delays..
 #define LUX_TIMER_HANDLE      htim2
 
-// --- Rain Sensor (Reed Switch) Configuration ---
+// Rain Sensor (Reed Switch) Configuration
 #define RAIN_GPIO_Port      GPIOA
 #define RAIN_Pin            GPIO_PIN_4
 #define RAIN_EXTI_IRQn      EXTI4_15_IRQn
+
+
+// Storage Config 
+
+#define EEPROM_BASE_ADDR        0x08080000U
+#define EEPROM_SLOT_COUNT       256          
+#define RAIN_COUNTER_SIZE       4    
+#define EEPROM_TOTAL_BYTES      (EEPROM_SLOT_COUNT * RAIN_COUNTER_SIZE)
+
+#define RAIN_WINDOW_SIZE_MIN    60           // 1 hour window

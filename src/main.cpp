@@ -4,6 +4,9 @@
 #include "stm32l0xx_hal.h"
 #include "drivers/rain_sensor/rain_sensor.h"
 #include "services/comms_service/comms_service.h"
+#include "services/storage_service/storage_service.h"
+#include "time_utils.h"
+
 
 extern "C"{
     #include "stm32_init.h"
@@ -49,6 +52,8 @@ int main(void) {
     luxSensor.begin();           // Initialize sensor
 
     Comms_Init(&huart2);
+    storage_init();
+    time_init();
 
 
     // float lux = 0.0f;
